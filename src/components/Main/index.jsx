@@ -7,7 +7,7 @@ import ToDoItem from "../ToDoItem";
 import { setModalState } from "../../store/modal/modalActions";
 const Main = () => {
   const dispatch = useDispatch();
-  const { fieldState, gridState, todos, modalState } = useSelector(
+  const { fieldState, gridState, todos, modalState, fieldValue } = useSelector(
     (state) => state
   );
   /* To checkState */
@@ -37,9 +37,23 @@ const Main = () => {
                 gridState === "grid" ? "todo__bottom grid" : "todo__bottom list"
               }
             >
-              {todos.map((todo) => {
-                return <ToDoItem key={todo.id} todo={todo} />;
-              })}
+              {fieldValue
+                ? todos
+                    .filter(
+                      (todo) =>
+                        todo.title
+                          .toLowerCase()
+                          .includes(fieldValue.toLowerCase()) ||
+                        todo.content
+                          .toLowerCase()
+                          .includes(fieldValue.toLowerCase())
+                    )
+                    .map((todo) => {
+                      return <ToDoItem key={todo.id} todo={todo} />;
+                    })
+                : todos.map((todo) => {
+                    return <ToDoItem key={todo.id} todo={todo} />;
+                  })}
             </div>
           </div>
         </div>
