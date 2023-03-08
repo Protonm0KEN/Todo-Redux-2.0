@@ -1,5 +1,6 @@
 @import url("./font.scss");
 @import url("./variables.scss");
+@import url("./media-responsive-adapt/media.scss");
 *{
     margin: 0;
     padding: 0;
@@ -21,7 +22,4 @@ button{
     padding: 0 15px;
     width: 100%;
     margin: 0 auto;
-}
-.App{
-    
 }
