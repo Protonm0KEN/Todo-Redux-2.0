@@ -1,0 +1,12 @@
+$Roboto:
+        ('Medium', 500),
+        ('Regular', 400),
+        ;
+            
+@each $name,$weight in $Roboto {
+    @font-face {
+        font-family: 'Roboto';
+        src: url(../assets/fonts/Roboto/Roboto-#{$name}.ttf);
+        font-weight: $weight;
+    }
+}
