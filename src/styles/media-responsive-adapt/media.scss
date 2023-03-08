@@ -17,14 +17,23 @@
   .open-modal-main {
     left: 86%;
   }
+    .Main .todo__bottom.grid{
+        grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 425px) {
   .open-modal-main {
     left: 83%;
   }
+  .Main .todo__bottom.grid{
+        grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 320px) {
   .open-modal-main {
     left: 80%;
+  }
+    .Main .todo__bottom.grid{
+        grid-template-columns: repeat(2, 1fr);
   }
 }
